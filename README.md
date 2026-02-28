@@ -26,11 +26,10 @@ dependencies:
 dependencies:
   flutter_flex_filter:
     git:
-      url: https://github.com/your-username/flutter_flex_filter.git
+      url: https://github.com/harshkumarkhatri/Flutter-Flex-Filter.git
 ```
-Replace your-username with the actual GitHub username.
 
-Then, run flutter pub get to install the package.
+Then, run `flutter pub get` to install the package.
 
 ## Usage
 Import the package
@@ -44,7 +43,7 @@ import 'package:flutter_flex_filter/flutter_flex_filter.dart';
 final queryBuilder = QueryParameterBuilder();
 String filterQuery = queryBuilder.addFilter(
   logicalOperand: LogicalOperand.and,
-  filterOrder: 0,
+  priorityOrder: 0,
   propertyName: 'created_at',
   relationalOperand: RelationalOperand.between,
   value: '2023-08-05T17:40:00+05:30,2023-09-10T17:40:00+05:30',
@@ -59,7 +58,7 @@ print(filterQuery);
 ```dart
 String sortQuery = queryBuilder.addSort(
   propertyName: 'created_at',
-  sortOrder: 0,
+  priorityOrder: 0,
   order: 'asc',
 );
 
@@ -70,7 +69,7 @@ print(sortQuery);
 #### Adding Search Parameters
 ```dart
 String searchQuery = queryBuilder.addSearch(
-  searchOrder: 0,
+  priorityOrder: 0,
   propertyName: 'name',
   value: 'John Doe',
 );
